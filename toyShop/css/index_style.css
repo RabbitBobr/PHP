@@ -1,0 +1,172 @@
+
+
+#block_header{
+    width: auto;
+    height: 100px;
+    border: 1px solid black;
+}
+
+#block-body{
+    width: 1035px;
+    height:  auto;
+    margin: 0 auto;
+}
+#block_header{
+    width: 1035px;
+    height: 220px;
+}
+#block_right{
+    width: 220px;
+    height: auto;
+    float: right;
+}
+#block_content{
+    width: 800px;
+    height: auto;
+}
+
+#header-top-block {
+    width: 1035px;
+    height: 35px;
+}
+
+#header-top-menu li {
+    font: 15px sans-serif;
+    float: left;
+    margin: 10px 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0;
+    border-right: 1px solid #E3E3E3;
+}
+
+#header-top-menu a {
+    font: 15px sans-serif;
+    color: #00678C;
+    text-decoration: none;
+}
+
+#header-top-menu a:hover {
+    color: #E2122F;
+    border-bottom: 1px dashed #E2122F;
+}
+
+#header-top-menu span {
+    color: #E2122F;
+    border-bottom: 1px dashed #E2122F;
+}
+
+#reg-auth-title {
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+}
+
+#reg-auth-title > a#active-button {
+    color: #2B6BE2;
+    background: url("/images/auth-butt-bg-click.png") repeat-x;
+}
+
+#reg-auth-title a.top-auth {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background: url("/images/button-grd.png") repeat-x;
+    font: bold 13px sans-serif;
+    padding: 5px 10px;
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+#reg-auth-title a.top-auth:hover {
+    color: #2B6BE2;
+    background: url("/images/button-grd-hover.png") repeat-x;
+}
+
+#reg-auth-title a.top-auth:active {
+    color: #EC102E;
+    background: url("/images/button-grd-active.png") repeat-x;
+}
+
+#reg-auth-title a {
+    text-decoration: none;
+    font: 14px sans-serif;
+    color: #E2122F;
+    margin-left: 5px;
+    border-bottom: 1px dashed #E2122F;
+}
+
+#reg-auth-title a:hover {
+    color: #2B6BE2;
+    border-bottom: none;
+}
+
+.corner {
+    background: url("/images/bulleticon.png");
+    width: 19px;
+    height: 10px;
+    margin-left: 175px;
+    margin-top: -9px;
+}
+
+#input-email-pass > h3 {
+    font: 15px sans-serif;
+    margin: 10px;
+}
+
+#message-auth {
+    font: bold 12px sans-serif;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FFE8E8;
+    color: #EC102E;
+    display: none;
+}
+
+#input-email-pass > li {
+    margin-top: 7px;
+}
+
+#input-email-pass input#auth_login {
+    width: 180px;
+    height: 25px;
+    font: 15px sans-serif;
+    border: 1px solid #DBDBDB;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+#input-email-pass input#auth_pass {
+    width: 180px;
+    height: 25px;
+    font: 15px sans-serif;
+    border: 1px solid #DBDBDB;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.pass-show {
+    background: url(/images/open_eye.png) no-repeat;
+    width: 18px;
+    height: 11px;
+
+}
+
+.pass-hide {
+    background: url(/images/eye_closed.png) no-repeat;
+    width: 20px;
+    height: 10px;
+
+}
+
+#input-email-pass span {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    position: absolute;
+    margin-left: -28px;
+}
+
