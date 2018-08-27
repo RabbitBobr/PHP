@@ -14,6 +14,7 @@ if($_SESSION['auth'] == 'yes_auth')
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/profile_steel.css">
+        <link rel="stylesheet" href="css/table_style.css">
 
         <script type="text/javascript" src="js/jq.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -27,8 +28,7 @@ if($_SESSION['auth'] == 'yes_auth')
             include "include/block_header_profile.php";
             ?>
             <p><a href="index.php">На главную</a> </p>
-            <!-- Линия -->
-            <hr class="top-line"/>
+
         </div>
 
         <div id="block-content">

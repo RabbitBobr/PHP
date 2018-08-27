@@ -29,25 +29,33 @@
 
     margin-left: 120px;
 }
-
-#sorting-list{
-    border: 1px solid #A3C0D2;
+.block-filter{
+    width: 1035px;
+    height: 100px;
+    border: 1px solid black;
     position: absolute;
-    width: 200px;
-    height: 108px;
-    background-color: white;
-    padding-top: 5px;
-    display: none;
+    margin-top: -20px;
 }
-#sorting-list li{
-    margin-top: 3px;
-    margin-left: 10px;
+#search-in-table{
+    width: 1035px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 130px;
+    padding-left: 7px;
 }
-#sorting-list a{
-    font: 15px sans-serif;
-    text-decoration: none;
-    color: black;
+
+#search-header{
+    margin-left: 442px;
+    margin-top: 40px;
 }
-#sorting-list a:hover{
-    text-decoration: underline;
+
+#see-table{
+    width: 1035px;
+    height: auto;
+    margin-left: 130px;
+    margin-top: 150px;
 }
+
+
+
+

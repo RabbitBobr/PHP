@@ -5,8 +5,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
     $array_proc = selectAllProcurements();
     echo '
-<table>
-<caption>Список закупок</caption>
+<table class="simple-little-table" cellspaising="0">
 <tr>
     <th>Наименование товара</th>
     <th>Поставщик</th>

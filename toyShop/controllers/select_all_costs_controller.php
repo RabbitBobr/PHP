@@ -6,8 +6,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $array_costs = selectAllCosts();
     $sum = 0;
     echo '
-<table>
-<caption>Список трат</caption>
+<table class="simple-little-table" cellspaising="0">
+
 <tr>
     <th>Наименование траты</th>
     <th>Стоимость</th>

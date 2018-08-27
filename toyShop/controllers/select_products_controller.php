@@ -8,8 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $array_category = getArrayAllCategory();
 
     echo '
-<table>
-<caption>Список товаров</caption>
+<table class="simple-little-table" cellspaising="0">
 <tr>
     <th>Наименование товара</th>
     <th>Артикул</th>

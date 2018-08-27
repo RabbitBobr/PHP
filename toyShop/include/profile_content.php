@@ -9,8 +9,25 @@
     </ul>
 </div>
 
-<div id="seach-in-table">
+<div id="search-in-table">
 
+    <div id="bottom-line"></div>
+    <h3 id="search-header"></h3>
+    <div class="block-filter" id="filter-product">
+
+    </div>
+    <div class="block-filter" id="filter-sale">
+
+    </div>
+    <div class="block-filter" id="filter-purchase">
+
+    </div>
+    <div class="block-filter" id="filter-costs">
+
+    </div>
+    <div class="block-filter" id="filter-statistics">
+
+    </div>
 </div>
 
 <div id="see-table">

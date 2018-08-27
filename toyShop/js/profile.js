@@ -6,7 +6,9 @@ $(document).ready(function () {
             dataType: "html",
             cache: false,
             success: function (data) {
+                $("#search-header").html('Фильтр затрат');
                 $("#see-table").html(data);
+
             }
         });
     });
@@ -17,6 +19,8 @@ $(document).ready(function () {
             dataType: "html",
             cache: false,
             success: function (data) {
+
+                $("#search-header").html('Фильтр закупок');
                 $("#see-table").html(data);
             }
         });
@@ -29,6 +33,8 @@ $(document).ready(function () {
             dataType: "html",
             cache: false,
             success: function (data) {
+
+                $("#search-header").html('Фильтр продаж');
                 $("#see-table").html(data);
             }
         });
@@ -41,6 +47,8 @@ $(document).ready(function () {
             dataType: "html",
             cache: false,
             success: function (data) {
+
+                $("#search-header").html('Фильтр товаров');
                 $("#see-table").html(data);
             }
         });
