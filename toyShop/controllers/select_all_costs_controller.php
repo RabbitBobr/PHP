@@ -6,7 +6,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $array_costs = selectAllCosts();
     $sum = 0;
     echo '
-<table class="simple-little-table" cellspaising="0">
+
+
+<table id="simple-little-table-cost" class="simple-little-table" cellspaising="0">
 
 <tr>
     <th>Наименование траты</th>
@@ -26,4 +28,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 <td>Всего</td>
 <td>'. $sum/100 .'</td>
 </table>';
+
+
 }

@@ -36,6 +36,7 @@ if($_SESSION['auth'] == 'yes_auth')
             include "include/profile_content.php";
             ?>
         </div>
+
     </div>
     </body>
     </html>

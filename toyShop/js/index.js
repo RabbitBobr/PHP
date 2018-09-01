@@ -84,8 +84,6 @@ $(document).ready(function() {
                 dataType: "html",
                 cache: false,
                 success: function(data) {
-                    alert(data);
-
                     if (data === 'true')
                     {
                         location.reload();

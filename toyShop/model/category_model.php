@@ -12,6 +12,16 @@ function getArrayAllCategory()
     return $cat->fetchAll();
 }
 
+function getArrayCategoryByType($type)
+{
+    include "connect_to_bd.php";
+    $query = "SELECT * FROM category WHERE product_type = :type";
+    $cat = $pdo->prepare($query);
+    $cat->execute(['type' => $type]);
+
+    return $cat->fetchAll();
+}
+
 function addNewCategory($type, $category)
 {
     include "connect_to_bd.php";

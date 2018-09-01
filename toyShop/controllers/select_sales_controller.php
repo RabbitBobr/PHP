@@ -2,6 +2,7 @@
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     include __DIR__ . "/../model/sales_model.php";
+    include __DIR__ . "/../model/product_model.php";
 
     $array_sales = selectAllSales();
 
@@ -16,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     foreach ($array_sales as $value)
     {
         echo '<tr>
-<td>'.$value['product_id'].'</td>
+<td>' . getNameById($value['product_id']) . '</td>
 <td>'. $value['check_number'] .'</td>
 <td>'.$value['date'].'</td>
 <td>'. $value['price']/100 .'</td>
