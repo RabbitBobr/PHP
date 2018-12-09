@@ -20,3 +20,16 @@ function getNameById($id)
 
     return $prod->fetch()['name'];
 }
+
+function addNewProduct($name, $vendor_code, $type, $image_name)
+{
+    include "connect_to_bd.php";
+    $query = "INSERT INTO products VALUES (NULL, :name, :code, 0, :type, 0, :image)";
+    $prod = $pdo->prepare($query);
+    $prod->execute([
+        'name' => $name,
+        'code' => $vendor_code,
+        'type' => $type,
+        'image' => $image_name
+    ]);
+}

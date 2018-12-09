@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    refProductNamesList();
+
     $('#block-menu> ul > li > a').click(function(){
 
         if ($(this).attr('class') != 'active'){
@@ -99,6 +101,25 @@ $(document).ready(function () {
             }
         })
     });
+    $('.purchase_product_name').change(function(){
+        var selected = $('option:selected', this).attr('class');
+        var optionText = $('.editable').text();
+
+        if(selected == "editable"){
+            $('.editOption').show();
+
+
+            $('.editOption').keyup(function(){
+                var editText = $('.editOption').val();
+                $('.editable').val(editText);
+                $('.editable').html(editText);
+            });
+
+        }else{
+            $('.editOption').hide();
+        }
+    });
+
 
     $('#select-sale').click(function () {
         refTableSale();
@@ -136,13 +157,94 @@ $(document).ready(function () {
                 cache: false,
                 success: function (data) {
                     $('#product_new_category').prop('disabled', false);
+                    $('#add_new_category_product').prop('disabled', false);
                     $('#product_new_category').html(data);
                 }
             });
         } else {
             $('#product_new_category').prop('disabled', true);
+            $('#add_new_category_product').prop('disabled', true);
         }
     });
+    $('#add_data_product_submit').click(function () {
+
+       var error = [];
+        var name = $('#product_new_name').val();
+        var vendor = $('#product_new_vendor_code').val();
+        var type = $('#new_product_type').val();
+        if(name.length == 0) {
+            error.push('Не введено название');
+            $('#product_new_name').css('border-color', 'red');
+        } else {
+            $('#product_new_name').css('border-color', 'grey');
+        }
+        if(vendor.length == 0) {
+            error.push('Не введен артикул');
+            $('#product_new_vendor_code').css('border-color', 'red');
+        } else {
+            $('#product_new_vendor_code').css('border-color', 'grey');
+        }
+        if(type == 'no') {
+            error.push('Выберите тип и категорию товара');
+            $('#new_product_type').css('border-color', 'red');
+        } else {
+            $('#new_product_type').css('border-color', 'grey');
+        }
+
+        if(error.length == 0)
+        {
+            addNewProduct(name, vendor, $('#product_new_category').val());
+            $('#add_new_product_block_error').html("");
+            $('#product_new_name').val("");
+            $('#product_new_vendor_code').val("");
+            $('#new_product_type :nth-child(1)').attr('selected', 'selected');
+            refTableProduct();
+            refProductNamesList();
+        } else {
+            var wright_text_error = "<ul>";
+            $.each(error, function (index, value) {
+                wright_text_error += "<li>" + value.toString() + "</li>";
+            });
+            wright_text_error += "</ul>";
+            $('#add_new_product_block_error').html(wright_text_error);
+        }
+
+    });
+    $('a#start').click( function(event){
+        var type = $('#new_product_type').val();
+        if (type === "clothes")
+            type = "Одежда";
+        else if(type === "toys")
+            type = "Игрушки";
+        else
+            type = "Канцелярские товары";
+        $('#popUp > p > label').html(type);
+        event.preventDefault();
+        $('#overlay').fadeIn(250,
+            function(){
+                $('#popUp')
+                    .css('display', 'block')
+                    .animate({opacity: 1, top: '55%'}, 490);
+            });
+    });
+    $('#close, #overlay').click( function(){
+        $('#popUp')
+            .animate({opacity: 0, top: '35%'}, 490,
+                function(){
+                    $(this).css('display', 'none');
+                    $('#overlay').fadeOut(220);
+                }
+            );
+    });
+    $('#add_new_category_button_product').click(function () {
+        var type = $('#new_product_type').val();
+        var new_category = $('#add_new_category_name_product').val();
+        if (type !== 'no')
+            addNewCategory(type, new_category);
+    });
+
+
+
 
 });
 
@@ -190,3 +292,45 @@ function refTableProduct() {
         }
     });
 }
+function addNewProduct(name, vendor, type_id) {
+    $.ajax({
+        url: "controllers/add_new_Product.php",
+        type: "POST",
+        dataType: "html",
+        data: {
+            name: name,
+            vendor_code: vendor,
+            type_id: type_id
+        },
+        cache: false
+    });
+}
+function addNewCategory(type, new_category) {
+    $.ajax({
+        url: "controllers/add_new_category_controller.php",
+        type: "POST",
+        dataType: "html",
+        cache: false,
+        data: {
+            type: type,
+            category: new_category
+        },
+        success: function () {
+            $('#close, #overlay').trigger('click');
+        }
+    });
+}
+
+function refProductNamesList() {
+    $.ajax({
+        url: "controllers/set_data_list_product_names_controller.php",
+        type: "POST",
+        dataType: "html",
+        cache: false,
+        success: function (data) {
+            alert(data);
+            $("#set_data_list_product_names").html(data);
+        }
+    });
+}
+

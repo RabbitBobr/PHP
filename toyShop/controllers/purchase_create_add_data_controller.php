@@ -26,7 +26,7 @@
                 $result_string .= '
             <div class="add_data_purchase_block">
             <label>' . (($i+1)<10 ? ($i+1)."&nbsp;&nbsp;" : $i+1) . '</label>
-                <input class="purchase_product_name" name="purchase_product_name[]" type="text" placeholder="Название товара" value="' . $names[$i] . '"/>
+                <input list="set_data_list_product_names" class="purchase_product_name" name="purchase_product_name[]" type="text" placeholder="Название товара" value="' . $names[$i] . '"/>
                 <input class="purchase_product_price" name="purchase_product_price[]" type="text" placeholder="Стоимость" value="' . $prices[$i] . '"/>
                 <input class="purchase_product_size" name="purchase_product_size[]" type="text" placeholder="Кол-во" value="' . $sizes[$i] . '" />
             </div>';
@@ -39,7 +39,7 @@
                 $result_string .= '
             <div class="add_data_purchase_block">
                 <label>' . ($j<10 ? ($j . "&nbsp;&nbsp;") : $j) . '</label>
-                <input class="purchase_product_name" name="purchase_product_name[]" type="text" placeholder="Название товара" />
+                <input list="set_data_list_product_names" class="purchase_product_name" name="purchase_product_name[]" type="text" placeholder="Название товара" />
                 <input class="purchase_product_price" name="purchase_product_price[]" type="text" placeholder="Стоимость" />
                 <input class="purchase_product_size" name="purchase_product_size[]" type="text" placeholder="Кол-во" />
             </div>';

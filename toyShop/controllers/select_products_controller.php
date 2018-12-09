@@ -1,6 +1,6 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] == "POST")
-{
+//if($_SERVER['REQUEST_METHOD'] == "POST")
+//{
     include __DIR__ . "/../model/product_model.php";
     include __DIR__ . "/../model/category_model.php";
 
@@ -22,23 +22,27 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         echo '<tr>
 <td>'.$value['name'].'</td>
 <td>'. $value['vendore_code'] .'</td>
-<td>'. getCategory($array_category, $value['id']) .'</td>
+<td>'. getCategory($array_category, $value['category_id']) .'</td>
 <td>'. $value['recomend_price']/100 .'</td>
 <td>'.$value['size'].'</td>
         </tr>';
 
     };
+    unset($value);
     echo '
 
 </table>';
-}
+//}
 
 function getCategory($array, $id)
 {
+    unset($value);
     foreach ($array as $value)
     {
         if ($value['id'] == $id)
             return $value['category'];
     }
+
     return '';
 }
+

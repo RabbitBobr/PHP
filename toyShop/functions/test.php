@@ -1,39 +1,29 @@
-<?php
-include __DIR__ . "/../model/costs_model.php";
-$_POST['check_date'] = 'false';
-$_POST['check_name'] = 'true';
-$_POST['cost_name'] = 'Аренда';
-
-    $array_costs = selectAllCosts();
-    $sum = 0;
-    $checked_date = ($_POST['check_date'] == 'true');
-    $checked_name = ($_POST['check_name'] == 'true');
-
-    $array_costs_copy = $array_costs;
-
-    foreach ($array_costs_copy as $key => $value)
-    {
-        if($checked_name)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <script type="text/javascript">
+        function show()
         {
-            if($value['name'] != $_POST['cost_name'])
-            {
-                unset($array_costs[$key]);
-                continue;
-            }
+            document.getElementById('form').style.display = 'block';
         }
-        if($checked_date)
+        function hide()
         {
-            if($value['date'] < $_POST['date_start'] || $value['date'] > $_POST['date_stop'])
-            {
-                unset($array_costs[$key]);
-                continue;
-            }
+            document.getElementById('form').style.display = 'none';
         }
+    </script>
+</head>
 
+<body>
 
-    }
-
-    unset($value);
-
-    print_r($array_costs);
-
+<form action="" method="post">
+    <div class="form" id="form" style="position:absolute; top:10%; left:10%; border:1px solid #000000; display:none;" >
+        <input type="text" id="text" name="text" />
+        <input type="button" onclick="hide()" value="Скрыть" />
+    </div>
+    <input type="button" onclick="show()" value="Формочка." />
+    <input type="submit" value="Отправить." />
+</form>
+</body>
+</html>

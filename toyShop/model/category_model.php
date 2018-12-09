@@ -25,7 +25,7 @@ function getArrayCategoryByType($type)
 function addNewCategory($type, $category)
 {
     include "connect_to_bd.php";
-    $query = "INSERT INTO category (id, product_type) VALUES (NULL, {$type}, {$category})";
+    $query = "INSERT INTO category (id, product_type, category) VALUES (NULL, '{$type}', '{$category}')";
     $pdo->exec($query);
 }
 
