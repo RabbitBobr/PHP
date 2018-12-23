@@ -1,0 +1,29 @@
+{
+  "id":"814eb4c9-d837-4551-beea-1f6c1542872d",
+  "timestamp":1545322430162,
+  "type":"ReceiptCreated",
+  "version":2,
+  "userId":"01-000000000663602",
+  "data":
+    {
+      "id":"f011cc69-1e6e-4522-ae27-3780102b7f77",
+      "dateTime":"2018-12-20T16:13:25.000Z",
+      "type":"SELL",
+      "paymentSource":"OTHER",
+      "infoCheck":false,
+      "items":
+        [
+          {
+            "id":"390067bf-e8d3-4fcc-8c30-fbfd77a0a70d",
+            "name":"\u041f\u043e\u0437\u0438\u0446\u0438\u044f \u043f\u043e \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u043e\u0439 \u0446\u0435\u043d\u0435","measureName":"\u0434\u0440\u043e\u0431",
+            "quantity":1,
+            "price":165,
+            "costPrice":0,
+            "sumPrice":165,
+            "discount":0
+          }
+        ],
+      "totalDiscount":0,
+      "totalAmount":165
+    }
+}
